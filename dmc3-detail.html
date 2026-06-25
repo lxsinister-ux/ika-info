@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review & Lore DMC 3 - Ika</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f6e5f9;
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 30px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            padding: 25px;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-family: 'Fredoka', sans-serif;
+            color: #8a70a4;
+            font-size: 26px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .meta-info {
+            font-size: 13px;
+            color: #ff9aa2;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            border-bottom: 2px dashed #f4e6f7;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-family: 'Fredoka', sans-serif;
+            color: #8a70a4;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        p {
+            color: #555;
+            font-size: 14.5px;
+            line-height: 1.7;
+            margin: 0 0 15px 0;
+        }
+
+        ul {
+            margin: 0 0 20px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        li strong {
+            color: #8a70a4;
+        }
+
+        .highlight-box {
+            background-color: #fcf5fd;
+            border-left: 4px solid #8a70a4;
+            padding: 15px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-style: italic;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background-color: #8a70a4;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(138, 112, 164, 0.3);
+            margin-top: 20px;
+        }
+
+        .btn-back:hover {
+            background-color: #765d8f;
+            transform: scale(1.03);
+        }
+
+        .detail-banner {
+            width: 100%;             /* Izinkan lebar hingga penuh wadah */
+            max-width: 100%;         /* Jangan melebihi lebar wadah asli */
+            height: auto;            /* HITUNG TINGGI OTOMATIS BERDASARKAN RASIO */
+            aspect-ratio: 16 / 9;   /* Jaga rasio asli (opsional, tapi bagus) */
+            object-fit: fill;     /* Tampilkan seluruh gambar, jangan dipotong */
+            border-radius: 12px;     /* Kasih lengkungan di sudut biar estetik */
+            margin-top: 20px;       /* Kasih jarak di atas gambar */
+            margin-bottom: 0;        /* Jarak bawah dimatikan biar mepet ke judul h2 */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Kasih bayangan tipis */
+            display: block;          /* Pastikan margin samping berfungsi */
+            margin-left: auto;       /* Pusatkan secara horizontal */
+            margin-right: auto;
+        }
+
+        .container h2 {
+            margin-top: 15px;
+        }
+
+        .audio-section {
+            background-color: #fcf5fd;
+            border: 2px solid #f4e6f7;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .audio-section h4 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #8a70a4;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 5px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rasio video 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Devil May Cry 3: Dante's Awakening</h1>
+        <div class="meta-info">Analisis oleh Ika • Action Game Connoisseur</div>
+        
+        
+        <p>
+            Kalau ditanya apa game <b>hack and slash</b> paling ikonik yg gue mainin, jawaban gua pasti jatuh ke <b>Devil May Cry 3</b> Game ini rilis tahun 2005 sebagai prekuel, menceritakan masa muda Dante yang masih urakan, songong, tapi kerennya gak ada obat. Di sini kita dibawa ke masa sebelum Dante membuka toko setannya, di mana dia harus menghadapi krisis keluarga yang super kacau.
+        </p>
+
+        <img src="dmc3-spesial.jpg" alt="vergil-dante" class="detail-banner">
+
+        <h2>The Deep Lore: Rivalitas Abadi Dua Anak Sparda</h2>
+        <p>
+            Inti cerita dari DMC 3 ini sebenernya adalah drama keluarga berbalut pertumpahan darah iblis. Ceritanya berfokus pada hubungan benci tapi rindu antara si kembar **Dante** dan **Vergil**:
+        </p>
+        <ul>
+            <li>
+                <strong>Ideologi yang Bertolak Belakang:</strong> Pasca kematian ibu mereka (Eva) akibat serangan iblis, keduanya mengambil jalan yang beda banget. Dante memilih menolak sisi iblisnya dan hidup bebas, sedangkan Vergil justru haus akan kekuatan iblis demi melindungi dirinya sendiri agar tidak kehilangan apa pun lagi.
+            </li>
+            <li>
+                <strong>Menara Temen-ni-gru:</strong> Vergil, dibantu oleh pria misterius bernama Arkham, membangkitkan kembali menara kuno Temen-ni-gru ke permukaan kota. Tujuannya cuma satu: membuka gerbang dunia iblis untuk merebut pedang pusaka dan kekuatan absolut dari ayah mereka, Sang Ksatria Hitam Sparda.
+            </li>
+            <li>
+                <strong>Lady dan Dendamnya:</strong> Karakter Mary (yang kemudian dipanggil Lady) juga punya peran penting di lore ini. Dia adalah manusia biasa yang datang ke menara buat membunuh Arkham, yang ternyata adalah ayah kandungnya sendiri yang tega mengorbankan ibunya demi jadi iblis.
+            </li>
+        </ul>
+
+        <div class="highlight-box">
+            <p>"Pertarungan terakhir antara Dante dan Vergil di tengah derasnya air hujan dunia iblis bener-bener jadi salah satu boss fight paling emosional sekaligus legendaris di sejarah gaming."</p>
+        </div>
+
+        <h2>🎮 Gaming Experience: Mekanik Style yang Revolusioner</h2>
+        <p>
+            Selain ceritanya yang mantap, DMC 3 diakui dunia karena berhasil menciptakan standar baru buat genre <b>action</b> lewat fitur mekanik game-nya:
+        </p>
+        <ul>
+            <li>
+                <strong>4 Style Utama (Dan 2 Style Rahasia):</strong> Lu bisa memilih gaya tarung sesuai selera! Ada <b>Trickster</b> buat lari-larian dan menghindar cepat, <b>Swordmaster</b> buat kombo pedang jarak dekat, <b>Gunslinger</b> buat gaya tembak estetik, dan <b>Royalguard(ICONIC)</b> buat yang jago <B>perfect block</B> serangan musuh.
+            </li>
+            <li>
+                <strong>Tingkat Kesulitan Gila-gilaan:</strong> Versi original game ini terkenal susah mampus (bahkan mode *Normal*-nya versi US itu setara mode *Hard* di game Jepang!). Lu bakal sering banget ngeliat layar *Game Over* kalau asal pencet tombol tanpa strategi kombo.
+            </li>
+            <li>
+                <strong>Senjata yang Beragam:</strong> Gak cuma pedang Rebellion, Dante bisa dapet berbagai senjata unik dari bos iblis yang dikalahkannya, mulai dari nunchaku es (Cerberus), pedang kembar angin-api (Agni & Rudra), sampai gitar listrik yang bisa ngeluarin petir (Nevan)!
+            </li>
+        </ul>
+
+        <h2>⭐ Kesimpulan Akhir</h2>
+        <p>
+            DMC 3 adalah *masterpiece* yang berhasil menyelamatkan franchise Devil May Cry setelah hancur di game kedua. Kombinasi cerita rivalitas saudara yang kuat, *soundtrack* metal yang bikin semangat, serta gameplay kombo yang sangat *satisfying* bikin game ini gak ngebosenin buat dimainin kapan pun. Skor mutlak dari gue: <strong>9,5/10!</strong>
+        </p>
+
+         <div class="audio-section">
+            <h4>🎵 The Most Iconic Song From dmc3</h4>
+            <p style="font-size: 13px; color: #777; margin-bottom: 8px;">Devil-never-cry</p>
+            <audio controls>
+                <source src="devil-never-cry.mp3" type="audio/mpeg">
+                Browser lo gak support muter audio nih, ganti Chrome gih!
+            </audio>
+        </div>
+
+        <a href="game.html" class="btn-back">← Kembali ke Game Corner</a>
+    </div>
+
+</body>
+</html>
