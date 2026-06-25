@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDLC Review & Lore - Ika</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f6e5f9;
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 30px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            padding: 25px;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-family: 'Fredoka', sans-serif;
+            color: #ff9aa2; /* Pink DDLC abis */
+            font-size: 26px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .meta-info {
+            font-size: 13px;
+            color: #8a70a4;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            border-bottom: 2px dashed #f4e6f7;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-family: 'Fredoka', sans-serif;
+            color: #ff9aa2;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        p {
+            color: #555;
+            font-size: 14.5px;
+            line-height: 1.7;
+            margin: 0 0 15px 0;
+        }
+
+        ul {
+            margin: 0 0 20px 0;
+            padding-left: 0; /* Diubah jadi 0 biar list rata kiri estetik */
+        }
+
+        li {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        li strong {
+            color: #ff9aa2;
+        }
+
+        /* Kotak Warning / Highlight Patah Hati */
+        .warning-box {
+            background: linear-gradient(45deg, #ffb7b2, #ffe5ec);
+            border-left: 5px solid #ff4d6d;
+            padding: 15px;
+            border-radius: 0 12px 12px 0;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .warning-box p {
+            margin: 0;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 15px;
+            color: #0c0002;
+            font-weight: bold;
+        }
+
+        /* Gaya Audio Player */
+        .audio-section {
+            background-color: #fff0f3;
+            border: 2px solid #ffe5ec;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .audio-section h4 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #ff4d6d;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 5px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background-color: #8a70a4;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(138, 112, 164, 0.3);
+            margin-top: 25px;
+        }
+
+        .btn-back:hover {
+            background-color: #765d8f;
+            transform: scale(1.03);
+        }
+
+        .detail-banner {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #8a70a4;
+            box-shadow: 0 12px 30px rgba(138, 112, 164, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Fix typo sease */
+            display: block;
+            margin: 0 auto;
+        }
+
+       /* ====================================================
+           UPDATE: BIAR FOTO PROFIL & TEKS RATAL TENGAH
+           ==================================================== */
+        .char-avatar {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50px;
+            border: 2px solid #ff9aa2;
+            box-shadow: 0 4px 10px rgba(255, 154, 162, 0.4);
+            margin: 0 auto 12px auto; /* Atas 0, Kiri-Kanan AUTO bikin gambar ke TENGAH, Bawah 12px */
+            display: block;
+        }
+
+        .char-item {
+            list-style: none; 
+            margin-bottom: 35px !important; 
+            padding-top: 10px;
+            text-align: center; /* Bikin semua teks di bawah foto ikutan rata TENGAH */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Doki Doki Literature Club: Trauma Berkedok Anime Cute!</h1>
+        <div class="meta-info">Analisis oleh Ika • Klub Sastra Korban Monika</div>
+
+        <p>
+            Jangan pernah tertipu sama impresi awal game ini! Pas pertama main, lo bakal disuguhin visual novel simulasi kencan biasa yang isinya cewek-cewek anime imut penyuka puisi. Tapi begitu masuk pertengahan game... DDLC langsung berubah jadi game psikologis horor paling jenius yang pernah ada.
+        </p>
+
+        <img src="ddlc-main-menu.jpg" alt="DDLC Main Menu" class="detail-banner">
+
+        <div class="warning-box">
+            <p>💔 POIN RATING: KASIH BINTANG 4 SOALNYA GUE MASIH TRAUMA & KASIAN BANGET SAMA SAYORI! JOINT THE CLUB THEY SAID, IT WILL BE FUN THEY SAID... 💔</p>
+        </div>
+
+        <h2>📖 Lore & Kegilaan Monika (The Ultimate Hacker)</h2>
+        <p>
+            Plot twist terbesar DDLC adalah konsep <strong>Breaking the Fourth Wall</strong> (menembus dinding pembatas antara game dan pemain dunia nyata). Game ini bener-bener sadis karena:
+        </p>
+        <ul>
+            <li>
+                <strong>Monika Sentient Sentimental:</strong> Monika, sang ketua klub, sadar kalau diri dia hanyalah karakter di dalam sebuah game komputer. Dia tahu dia gak punya rute kencan buat dapetin cinta si pemain (lo).
+            </li>
+            <li>
+                <strong>Manipulasi File .chr:</strong> Karena cemburu sama karakter lain, Monika mulai nge-hack <b>coding</b> game-nya sendiri. Dia sengaja nge-amplify sifat buruk/depresi dari <b>Sayori</b>, <b>Yuri</b>, dan <b>Natsuki</b> biar mereka bertingkah aneh dan berakhir mengenaskan, sehingga lo terpaksa cuma punya pilihan buat sama Monika doang <b>(Just Monika).</b>
+            </li>
+            <li>
+                <strong>Beneran Ngapus File:</strong> Di Act 3, game ini bakal nge-stuck di satu ruangan hampa bareng Monika selamanya. Cara buat namatinnya gila banget: Lo harus buka folder instalasi game DDLC di laptop lo secara nyata, lalu <strong>menghapus file monika.chr</strong> secara manual! Jenius parah!
+            </li>
+            <p>
+             <img src="just-monika.jpg" alt="DDLC Main Menu" class="detail-banner">
+             </p>
+
+        </ul>
+
+        <h2>📝 Anggota Klub Sastra (Korban & Pelaku)</h2>
+        <p>
+            Biar makin paham seberapa tragisnya manipulasi Monika, ini dia profil singkat dan sifat asli para anggota klub sebelum game-nya mulai rusak:
+        </p>
+        
+        <ul>
+            <li class="char-item">
+                <img src="ddlc-sayori.jpg" alt="Sayori Profil" class="char-avatar">
+                <strong>Sayori (The Sunshine Bullet):</strong> Teman masa kecil kita yang super ceria, ceroboh, dan selalu berusaha bikin semua orang bahagia. Sayori adalah tipe karakter yang menyembunyikan depresi berat di balik senyum lebar sehari-harinya. Pas Monika memperparah depresinya di Act 1, dunianya langsung runtuh, bikin scene akhir Act 1 jadi salah satu tragedi paling ikonik di dunia game. <i>Huhu, still hurts...</i> 💔
+            </li>
+
+            <li class="char-item">
+                <img src="ddlc-natsuki.jpg" alt="Natsuki Profil" class="char-avatar">
+                <strong>Natsuki (The Tsundere Baker):</strong> Anggota paling kuntet yang hobi baca manga di pojokan kelas dan jago banget bikin kue mangkok (cupcake) unyu. Sifatnya <b>tsundere</b> klasik: galak dan judes di luar, tapi aslinya perhatian banget kalau udah kenal dekat. Di balik sifatnya, dia punya masalah keluarga tersembunyi yang bikin dia nyari pelarian ke klub sastra. 🍦
+            </li>
+            
+            <li class="char-item">
+                <img src="ddlc-yuri.jpg" alt="Yuri Profil" class="char-avatar">
+                <strong>Yuri (The Elegant Bookworm):</strong> Wakil ketua klub yang paling dewasa, pemalu, anggun, dan suka baca buku novel fantasi tebal. Yuri punya hobi mengoleksi pisau hias dan punya kecenderungan menyakiti diri sendiri <b>(self-harm).</b> Pas kodingan sifatnya dirusak sama Monika di Act 2, rasa sukanya berubah jadi obsesi yandere yang super menyeramkan sampai matanya jadi hiperaktif! 👁️🔪
+            </li>
+            
+            <li class="char-item">
+                <img src="ddlc-monika.jpg" alt="Monika Profil" class="char-avatar">
+                <strong>Monika (The Omnipotent President):</strong> Ketua klub sastra yang perfeksionis, pinter, populer, dan awalnya kelihatan paling normal serta dewasa. Plot twist-nya, dialah sang antagonis utama. Karena dia sadar kalau dia cuma karakter game yang gak dikasih rute kencan, Monika nekat menghapus teman-temannya sendiri demi bisa berduaan sama lo di balik layar komputer. 🟩⌨️
+            </li>
+        </ul>
+
+        <h2>⭐ Kesimpulan Akhir</h2>
+        <p>
+            DDLC adalah pembuktian kalau game horor gak melulu soal *jumpscare* monster jelek. Horor psikologis yang memanfaatkan file sistem komputer ini bener-bener jenius. Tapi ya itu tadi... plot tragis yang menimpa Sayori di akhir Act 1 bakal membekas selamanya di hati. Rating dari gue: <strong>9/10</strong> (Minus 1 bintang murni karena kasihan Sayori, huhu).
+        </p>
+
+        <div class="audio-section">
+            <h4>🎵 <b>DDLC ICONIC SONG</b> </h4>
+            <p style="font-size: 13px; color: #777; margin-bottom: 8px;">Your Reality - Monika (Dan Salvato)</p>
+            <audio controls>
+                <source src="your-reality.mp3" type="audio/mpeg">
+                Browser lo gak support muter audio nih, buruan update!
+            </audio>
+        </div>
+
+        <a href="game.html" class="btn-back">← Kembali ke Game Corner</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekomendasi Game-nya Ika 🎮</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f6e5f9;
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 30px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        header h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 32px;
+            margin: 0 0 10px 0;
+            background: linear-gradient(45deg, #8a70a4, #ff9aa2);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .normal-emoji {
+            -webkit-text-fill-color: initial;
+            background: none;
+            display: inline-block;
+        }
+
+        header p {
+            color: #666;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .games-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+
+        /* ====================================================
+           STYLE BARU: CSS UNTUK SEKAT KATEGORI
+           ==================================================== */
+        .section-divider {
+            font-family: 'Fredoka', sans-serif;
+            color: #8a70a4;
+            font-size: 18px;
+            margin: 15px 0 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 2px dashed #ff9aa2;
+            padding-bottom: 8px;
+        }
+
+        .game-card {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: row;
+            height: 210px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(138, 112, 164, 0.15);
+        }
+
+        .game-img {
+            width: 120px;
+            height: 100%;
+            object-fit: cover;
+            background-color: #eee;
+            flex-shrink: 0;
+        }
+
+        .game-info {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        .game-info h2 {
+            font-family: 'Fredoka', sans-serif;
+            margin: 0 0 2px 0;
+            color: #8a70a4;
+            font-size: 16px;
+        }
+
+        .genre {
+            font-size: 11px;
+            color: #ff9aa2;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .rating {
+            color: #ffb7b2;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .review {
+            color: #555;
+            font-size: 12px;
+            line-height: 1.5;
+            margin: 0 0 10px 0; /* Tambah margin bottom dikit biar ga nempel tombol */
+            display: -webkit-box;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* BONUS: Style tombol detail biar rapi */
+        .btn-detail {
+            align-self: flex-start;
+            font-size: 11px;
+            color: #8a70a4;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: #fcf5fd;
+            padding: 6px 12px;
+            border-radius: 12px;
+            border: 1px solid #f4e6f7;
+            transition: 0.2s;
+        }
+
+        .btn-detail:hover {
+            background-color: #8a70a4;
+            color: white;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background-color: #8a70a4;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(138, 112, 164, 0.3);
+        }
+
+        .btn-back:hover {
+            background-color: #765d8f;
+            transform: scale(1.05);
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding: 40px 20px;
+            }
+
+            header h1 {
+                font-size: 36px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .section-divider {
+                font-size: 22px;
+                margin: 25px 0 10px 0;
+            }
+
+            .game-card {
+                height: 300px;
+            }
+
+            .game-img {
+                width: 220px;
+            }
+
+            .game-info {
+                padding: 30px;
+            }
+
+            .game-info h2 {
+                font-size: 24px;
+            }
+
+            .genre {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+            .rating {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+
+            .review {
+                font-size: 14.5px;
+                line-height: 1.7;
+                display: block;
+                overflow: visible;
+            }
+
+            .btn-detail {
+                font-size: 13px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Game Corner <span class="normal-emoji">🎮</span></h1>
+        <p><b>Iseng nulis review singkat dan rekomendasi game yang seru (terutama yang lore-nya dalem!)</b>.</p>
+    </header>
+
+    <div class="games-grid">
+
+        <h2 class="section-divider">⚔️ Action , horror, hack n slash</h2>
+
+        <div class="game-card">
+            <img src="re4-remake.jpg" alt="RE4-remake." class="game-img">
+            <div class="game-info">
+                <div>
+                    <h2>Resident Evil 4 Remake</h2>
+                    <div class="genre">Survival Horror / Action</div>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </div>
+                <p class="review">
+                    Gak usah diragukan lagi, gameplay-nya seru banget dan grafisnya mantap! Lore seputar Los Illuminados di sini kerasa lebih dapet nuansa gelapnya dibanding versi original.
+                </p>
+                <a href="re4remake-detail.html" class="btn-detail">Lihat Lore Lengkap →</a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="dmc5.jpg" alt="Poster DMC 5" class="game-img">
+            <div class="game-info">
+                <div>
+                    <h2>Devil May Cry 5</h2>
+                    <div class="genre">Hack and Slash / Action</div>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review">
+                    Stylish action paling gila! Combo system-nya bener-bener rewarding, apalagi pas udah dapet SSS rank. Dante, Nero, sama V punya gaya main yang beda banget, bikin gak bosen tamatin berulang kali!
+                </p>
+                <a href="dmc5-detail.html" class="btn-detail">Lihat Lore Lengkap →</a>
+            </div>
+        </div>
+
+
+        <h2 class="section-divider" style="margin-top: 30px;">📖 Visual Novel Corner</h2>
+
+        <div class="game-card">
+            <img src="ddlc.jpg" alt="Poster DDLC" class="game-img">
+            <div class="game-info">
+                <div>
+                    <h2>Doki Doki Literature Club!</h2>
+                    <div class="genre">Psychological Horror / VN</div>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </div>
+                <p class="review">
+                    Jangan ketipu sama penampilan klub sastra yang unyu dan anime abis ini! Di balik puisi manis mereka, ada plot twist gila yang bakal bikin lo merinding pas gamenya mulai ngacak-ngacak file komputer lo...
+                </p>
+                <a href="ddlc-detail.html" class="btn-detail">Lihat Lore Lengkap →</a>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="index.html" class="btn-back">← Balik ke Bio Ika</a>
+
+</body>
+</html>

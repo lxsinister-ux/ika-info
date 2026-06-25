@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMC5 Review & Lore - Ika</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f6e5f9;
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 30px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            padding: 25px;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-family: 'Fredoka', sans-serif;
+            color: #8a70a4;
+            font-size: 26px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .meta-info {
+            font-size: 13px;
+            color: #ff9aa2;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            border-bottom: 2px dashed #f4e6f7;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-family: 'Fredoka', sans-serif;
+            color: #8a70a4;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        p {
+            color: #555;
+            font-size: 14.5px;
+            line-height: 1.7;
+            margin: 0 0 15px 0;
+        }
+
+        ul {
+            margin: 0 0 20px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        li strong {
+            color: #8a70a4;
+        }
+
+        /* Deklarasi Kebucinan Ika */
+        .husbando-box {
+            background: linear-gradient(45deg, #ffb7b2, #f6e5f9);
+            border-left: 5px solid #ff9aa2;
+            padding: 15px;
+            border-radius: 0 12px 12px 0;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .husbando-box p {
+            margin: 0;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 16px;
+            color: #8a70a4;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Gaya Audio Player */
+        .audio-section {
+            background-color: #fcf5fd;
+            border: 2px solid #f4e6f7;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .audio-section h4 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #8a70a4;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 5px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background-color: #8a70a4;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(138, 112, 164, 0.3);
+            margin-top: 25px;
+        }
+
+        .btn-back:hover {
+            background-color: #765d8f;
+            transform: scale(1.03);
+        }
+
+        .detail-banner {
+            width: 100%; /* Lebar gambar penuh mengikuti kotak */
+            height: 250px; /* Atur tinggi gambar sesuai selera */
+            object-fit: cover; /* Biar gambar gak gepeng walau tinggi berubah */
+            border-radius: 12px; /* Kasih lengkungan di sudut biar estetik */
+            margin-top: 20px; /* Kasih jarak di atas gambar */
+            margin-bottom: 0; /* Jarak bawah dimatikan biar mepet ke judul h2 */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Kasih bayangan tipis */
+        }
+
+        /* Khusus untuk judul h2 yang ada emoji matanya biar gak nempel banget */
+        .container h2 {
+            margin-top: 15px; /* Jarak judul dari gambar di atasnya */
+        }
+
+        .gif-container {
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Posisikan GIF di tengah secara horizontal */
+            margin: 20px 0; /* Kasih jarak atas bawah dari teks */
+        }
+
+        .dante-gif {
+            width: 100%;
+            max-width: 450px; /* Batasi lebar maksimal GIF agar tidak pecah/kegedean di desktop */
+            height: auto; /* Biar tingginya proporsional otomatis */
+            border-radius: 12px; /* Samain lengkungan sudutnya biar estetik */
+            border: 3px solid #8a70a4; /* Kasih bingkai ungu tipis biar makin unyu */
+            box-shadow: 0 4px 15px rgba(138, 112, 164, 0.2); /* Kasih bayangan tipis warna ungu */
+        }
+
+        .nero-gif {
+            width: 100%;
+            max-width: 450px; /* Batasi lebar maksimal GIF agar tidak pecah/kegedean di desktop */
+            height: auto; /* Biar tingginya proporsional otomatis */
+            border-radius: 12px; /* Samain lengkungan sudutnya biar estetik */
+            border: 3px solid #8a70a4; /* Kasih bingkai ungu tipis biar makin unyu */
+            box-shadow: 0 4px 15px rgba(138, 112, 164, 0.2); /* Kasih bayangan tipis warna ungu */
+        }
+
+        .V-gif {
+            width: 100%;
+            max-width: 450px; /* Batasi lebar maksimal GIF agar tidak pecah/kegedean di desktop */
+            height: auto; /* Biar tingginya proporsional otomatis */
+            border-radius: 12px; /* Samain lengkungan sudutnya biar estetik */
+            border: 3px solid #8a70a4; /* Kasih bingkai ungu tipis biar makin unyu */
+            box-shadow: 0 4px 15px rgba(138, 112, 164, 0.2); /* Kasih bayangan tipis warna ungu */
+        }
+
+        .lady-gif {
+            width: 100%;
+            max-width: 450px; /* Batasi lebar maksimal GIF agar tidak pecah/kegedean di desktop */
+            height: auto; /* Biar tingginya proporsional otomatis */
+            border-radius: 12px; /* Samain lengkungan sudutnya biar estetik */
+            border: 3px solid #8a70a4; /* Kasih bingkai ungu tipis biar makin unyu */
+            box-shadow: 0 4px 15px rgba(138, 112, 164, 0.2); /* Kasih bayangan tipis warna ungu */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Devil May Cry 5: SSS-Tier Hack and Slash!</h1>
+        <div class="meta-info">Analisis oleh Ika • Combo & Lore Analyst</div>
+
+        <p>
+            Kalau ditanya game <i>hack and slash</i> apa yang mekanik kombonya paling memuaskan sepanjang masa, jawabannya jelas <strong>Devil May Cry 5</strong>! Game ini bener-bener gila. Capcom berhasil nampilin visual yang super fotorealistik pakai RE Engine, dibarengi sama transisi musik yang bakal makin kencang kalau ranking kombo lo makin tinggi (dari D sampai SSS!).
+        </p>
+
+        <img src="vergil-dante.jpg" alt="vergil-dante" class="detail-banner">
+
+
+        <div class="husbando-box">
+            <p>⚔️ PERINGATAN!: VERGIL ADALAH HUSBANDO IKA TERCINTA ⚔️</p>
+        </div>
+
+        <h2>📖 Lore & Hubungan Keluarga yang "Agak Lain"</h2>
+
+        <li>
+            <strong>Dante (The Legendary MC):</strong> Di DMC5, Dante tampil sebagai pemburu iblis veteran yang karismatik tapi tetep petakilan. Dia adalah karakter paling kompleks dengan 4 gaya bertarung (Styles) dan tumpukan senjata gila—mulai dari motor raksasa yang dibelah jadi pedang (Cavaliere), sampai topi koboi yang bisa nembakin <b>Red Orbs</b> (Dr. Faust). Di sini dia juga bisa mengakses <i>Sin Devil Trigger</i>, wujud iblis sejatinya yang saking kuatnya bisa ngebikin musuh lenyap dalam sekejap! Paling ribet dimainin, tapi kalau kombonya dapet, langsung berasa jadi Dewa Game!
+        </li>
+        </ul>
+
+        <div class="gif-container">
+            <img src="dmc5-dante.gif" alt="Dante DMC5 SSS Animation" class="dante-gif">
+        </div>
+
+        <p>
+            Lore DMC5 ini berpusat pada kembalinya ancaman iblis melalui pohon raksasa bernama Qliphoth. Tapi di balik urusan menyelamatkan dunia, inti cerita game ini sebenarnya adalah drama keluarga Sparda yang hobi berantem pakai pedang:
+        </p>
+        <ul>
+            <li>
+                <strong>Sisi Kemanusiaan vs Iblis:</strong> Di awal game, ada sosok misterius bernama Urizen yang kuat banget. Ternyata, Urizen itu adalah perwujudan sisi iblis dari Vergil yang memisahkan diri demi dapet kekuatan absolut, sedangkan sisi manusianya berubah jadi cowok puitis bernama V.
+            </li>
+            <li>
+                <strong>Nero sang Anak Durhaka (Canda):</strong> Plot twist terbesarnya adalah Nero akhirnya tahu kalau Vergil itu adalah bapak kandungnya yang dulu pernah motong tangannya demi ngambil pedang Yamato. Makanya di akhir game, Nero dapet wujud iblis penuhnya cuma buat misahin bapak sama pamannya (Dante) yang gak capek-capek berantem.
+            </li>
+            <li>
+                <strong>The Return of The King:</strong> Pas V dan Urizen menyatu kembali, Vergil bangkit lagi dengan sejuta kharisma, pedang Yamato-nya, dan gaya bertarung super cepat yang bikin merinding!
+            </li>
+        </ul>
+
+        <h2>🎮 <b>Gaming Experience</b>:</h2>
+        <p>
+            Mainin DMC5 itu gak bakal bosen karena kita bakal dikasih experience dengan gaya bertarung yang beda jauh di setiap misi dan karakter nya:
+        </p>
+        <ul>
+            <li>
+                <strong>Nero:</strong> Mengandalkan lengan robot (Devil Breaker) yang punya fungsi unik—mulai dari ngeluarin setruman, jadi roket yang bisa dinaikin, sampai memanipulasi waktu.
+            </li>
+
+            <div class="gif-container">
+                <img src="nero-dmc.gif" alt="Nero DMC5" class="nero-gif">
+            </div>
+
+            <li>
+                <strong>V:</strong> Karakter paling unik karena dia gak bertarung langsung, melainkan memakai tiga bayangan iblisnya (Shadow, Griffon, Nightmare) sambil baca buku puisi di pojokan. Gaul banget! dan dia looks very <b>EMO</b>
+            </li>
+
+            <div class="gif-container">
+                <img src="dmc5-v.gif" alt="Nero DMC5" class="V-gif">
+            </div>
+
+            <li>
+                <strong>Lady (Mary):</strong> Pemburu iblis cewek yang paling <i>badass</i> karena dia adalah <strong>100% manusia murni</strong> tanpa darah iblis sama sekali! Walaupun manusia biasa, Lady gak bisa diremehkan. Dia bertarung mengandalkan kelincahan akrobatik dan tumpukan senjata api berat, terutama bazoka ikoniknya yang punya pisau bayonet raksasa bernama <strong>Kalina Ann</strong>. Di DMC5, dia bareng Trish sempat kena tangkap dan dijadiin inti energi buat monster iblis, tapi untungnya berhasil diselamatkan sama Dante dkk. Karakter yang membuktikan kalau gak perlu punya kekuatan magis buat jadi keren!
+            </li>
+            
+            <div class="gif-container">
+                <img src="dmc5-lady.gif" alt="Nero DMC5" class="lady-gif">
+            </div>
+
+        </ul>
+
+        <h2>⭐ Kesimpulan Akhir</h2>
+        <p>
+            Secara keseluruhan, <strong>Devil May Cry 5</strong> adalah mahakarya mutlak buat para pencinta game <i>action hack and slash</i>. Dengan grafik RE Engine yang super halus, cerita drama keluarga Sparda yang seru, sampai hadirnya Vergil sang husbando terbaik, game ini bener-bener gak membosankan walaupun dimainin berkali-kali buat ngejar ranking SSS. Rating mutlak dari gue: <strong>10/10! Yey!</strong> 🎉🔥
+        </p>
+
+
+        <div class="audio-section">
+            <h4>🎵 The Most Iconic Song From The Game</h4>
+            <p style="font-size: 13px; color: #777; margin-bottom: 8px;">Bury the Light - Vergil's Battle Theme</p>
+            <audio controls>
+                <source src="bury-the-light.mp3" type="audio/mpeg">
+                Browser lo gak support muter audio nih, ganti Chrome gih!
+            </audio>
+        </div>
+
+        <a href="game.html" class="btn-back">← Kembali ke Game Corner</a>
+    </div>
+
+</body>
+</html>
