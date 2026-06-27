@@ -14,7 +14,10 @@
         }
 
         body {
-            background-color: #f6e5f9;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('bg-emo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             font-family: 'Quicksand', sans-serif;
             margin: 0;
             padding: 30px 15px;
@@ -22,20 +25,22 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            color: #e0e0e0;
         }
 
         .container {
-            background-color: white;
+            background-color: rgba(26, 26, 30, 0.95);
+            border: 1px solid #2d2d34;
             border-radius: 20px;
             padding: 25px;
             width: 100%;
             max-width: 700px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
         }
 
         h1 {
             font-family: 'Fredoka', sans-serif;
-            color: #8a70a4;
+            color: #f5f5f5;
             font-size: 26px;
             margin-top: 0;
             margin-bottom: 10px;
@@ -44,18 +49,18 @@
 
         .meta-info {
             font-size: 13px;
-            color: #ff9aa2;
+            color: #e23e57;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 20px;
-            border-bottom: 2px dashed #f4e6f7;
+            border-bottom: 2px dashed rgba(226, 62, 87, 0.45);
             padding-bottom: 10px;
         }
 
         h2 {
             font-family: 'Fredoka', sans-serif;
-            color: #8a70a4;
+            color: #f5f5f5;
             font-size: 18px;
             margin-top: 25px;
             margin-bottom: 10px;
@@ -65,7 +70,7 @@
         }
 
         p {
-            color: #555;
+            color: #c0c0c0;
             font-size: 14.5px;
             line-height: 1.7;
             margin: 0 0 15px 0;
@@ -77,19 +82,19 @@
         }
 
         li {
-            color: #555;
+            color: #c0c0c0;
             font-size: 14px;
             line-height: 1.6;
             margin-bottom: 8px;
         }
 
         li strong {
-            color: #8a70a4;
+            color: #e23e57;
         }
 
         .highlight-box {
-            background-color: #fcf5fd;
-            border-left: 4px solid #8a70a4;
+            background: linear-gradient(45deg, #2d2d34, #25252b);
+            border-left: 4px solid #a6192e;
             padding: 15px;
             border-radius: 0 12px 12px 0;
             margin: 20px 0;
@@ -98,38 +103,39 @@
         .highlight-box p {
             margin: 0;
             font-style: italic;
+            color: #f5f5f5;
         }
 
         .btn-back {
             display: inline-block;
-            background-color: #8a70a4;
+            background-color: #a6192e;
             color: white;
             text-decoration: none;
             padding: 12px 25px;
             border-radius: 20px;
             font-weight: bold;
             transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(138, 112, 164, 0.3);
+            box-shadow: 0 4px 10px rgba(166, 25, 46, 0.25);
             margin-top: 20px;
         }
 
         .btn-back:hover {
-            background-color: #765d8f;
+            background-color: #851222;
             transform: scale(1.03);
         }
 
         .detail-banner {
-            width: 100%;             /* Izinkan lebar hingga penuh wadah */
-            max-width: 100%;         /* Jangan melebihi lebar wadah asli */
-            height: auto;            /* HITUNG TINGGI OTOMATIS BERDASARKAN RASIO */
-            aspect-ratio: 16 / 9;   /* Jaga rasio asli (opsional, tapi bagus) */
-            object-fit: fill;     /* Tampilkan seluruh gambar, jangan dipotong */
-            border-radius: 12px;     /* Kasih lengkungan di sudut biar estetik */
-            margin-top: 20px;       /* Kasih jarak di atas gambar */
-            margin-bottom: 0;        /* Jarak bawah dimatikan biar mepet ke judul h2 */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Kasih bayangan tipis */
-            display: block;          /* Pastikan margin samping berfungsi */
-            margin-left: auto;       /* Pusatkan secara horizontal */
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: fill;
+            border-radius: 12px;
+            margin-top: 20px;
+            margin-bottom: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            display: block;
+            margin-left: auto;
             margin-right: auto;
         }
 
@@ -138,8 +144,8 @@
         }
 
         .audio-section {
-            background-color: #fcf5fd;
-            border: 2px solid #f4e6f7;
+            background-color: #25252b;
+            border: 2px solid #3e3e46;
             padding: 20px;
             border-radius: 15px;
             margin-top: 30px;
@@ -149,7 +155,7 @@
         .audio-section h4 {
             margin-top: 0;
             margin-bottom: 12px;
-            color: #8a70a4;
+            color: #e23e57;
             font-family: 'Fredoka', sans-serif;
         }
 

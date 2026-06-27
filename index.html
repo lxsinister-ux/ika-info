@@ -10,37 +10,42 @@
 
     <style>
         /* ====================================================
-           1. DEFAULT GLOBAL & MOBILE STYLE (Satu Kolom lurus)
+           1. DEFAULT GLOBAL & MOBILE STYLE (Tema Emo / Dark)
            ==================================================== */
         * {
             box-sizing: border-box;
         }
 
         body {
-            background-color: #f6e5f9;
-            font-family: 'Quicksand', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 40px 20px;
-            gap: 30px;
-        }
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('bg-emo.jpg');
+        background-size: cover;        
+        background-position: center;   
+        background-attachment: fixed;  
+    
+        font-family: 'Quicksand', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 40px 20px;
+        gap: 30px;
+    }
 
-        /* SULAP PROFIL: Sekarang pakai background putih lucu */
+        /* Kotak profil jadi hitam pekat */
         .profile-section {
-            background-color: white;
+            background-color: #1a1a1e;
             border-radius: 20px;
             padding: 30px 22px;
             width: 100%;
-            max-width: 340px; /* Samakan lebar maksimalnya dengan kotak kanan di HP */
+            max-width: 340px; 
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            border: 1px solid #2d2d34; /* Border tipis biar makin tegas */
         }
 
         .grid-kanan {
@@ -59,13 +64,13 @@
         }
 
         /* ====================================================
-           2. TAMPILAN KHUSUS DESKTOP (Rapi, Simetris, Anti-Tabrakan)
+           2. TAMPILAN KHUSUS DESKTOP 
            ==================================================== */
         @media (min-width: 768px) {
             body {
                 flex-direction: row; 
                 gap: 40px;
-                max-width: 1150px; /* Dilebarkan dikit biar muat 3 kotak sejajar */
+                max-width: 1150px; 
                 margin: 0 auto;
                 align-items: flex-start; 
             }
@@ -73,7 +78,7 @@
             .profile-section {
                 align-items: flex-start;
                 text-align: left;
-                max-width: 320px; /* Ukuran pas pas desktop */
+                max-width: 320px; 
                 flex-shrink: 0; 
                 position: sticky; 
                 top: 40px;
@@ -100,40 +105,41 @@
             width: 130px;
             height: 130px;
             border-radius: 50%;
-            border: 4px solid #f6e5f9; /* Diubah warnanya biar kontras sama bg putih */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 4px solid #2d2d34; /* Border foto gelap */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             margin-bottom: 5px;
             object-fit: cover;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
         .profile-img:hover {
-            transform: scale(1.1) rotate(5deg); 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transform: scale(1.1) rotate(-5deg); 
+            box-shadow: 0 8px 20px rgba(166, 25, 46, 0.3); /* Efek glow merah pas di-hover */
         }
 
         h1 {
             font-family: 'Fredoka', sans-serif;
-            font-size: 28px; /* Dikecilkan dikit biar pas di dalam kotak */
+            font-size: 28px; 
             margin: 15px 0 5px 0;
-            background: linear-gradient(45deg, #8a70a4, #ff9aa2, #b5ead7);
+            /* Gradient diubah jadi perpaduan merah gelap, crimson, dan abu-abu metalik */
+            background: linear-gradient(45deg, #a6192e, #e23e57, #8e9296);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.02);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             display: inline-block;
         }
 
         h3 {
             margin: 0 0 15px 0;
-            color: #444;
+            color: #b3b3b3; /* Teks h3 jadi abu-abu terang */
             font-size: 16px;
         }
 
         p {
-            color: #555;
+            color: #999999; /* Deskripsi teks jadi abu-abu biar gak nusuk di mata */
             line-height: 1.7;
-            margin: 0; /* Hapus margin bottom biar gak lowong di bawah */
+            margin: 0; 
         }
 
         .link-container {
@@ -143,30 +149,47 @@
             gap: 12px;
         }
 
+        .random-image {
+            width: 100%;
+            max-width: 220px;
+            margin: 4px auto 0;
+            border-radius: 14px;
+            display: block;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            border: none;
+            object-fit: cover;
+        }
+
+        /* Default style tombol diubah jadi gelap/merah soft */
         a {
             display: block;
             text-align: center;
-            background-color: #ffb7b2;
-            color: white;
+            background-color: #25252b; 
+            color: #e0e0e0;
             text-decoration: none;
             padding: 14px 24px;
-            border-radius: 25px;
+            border-radius: 12px; /* Diubah agak kotak dikit biar dapet kesan emo-nya */
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: 0.3s;
+            border: 1px solid #3e3e46;
         }
 
         a:hover {
-            background-color: #ff9aa2;
+            background-color: #a6192e; /* Pas di-hover berubah jadi merah crimson *soft* */
+            color: white;
             transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(166, 25, 46, 0.4);
         }
 
+        /* Kotak skill & pesan jadi hitam pekat */
         .skills-box, .message-box {
-            background-color: white;
+            background-color: #1a1a1e;
             border-radius: 20px;
             padding: 22px;
             width: 100%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            border: 1px solid #2d2d34;
         }
 
         @media (min-width: 768px) {
@@ -178,10 +201,11 @@
             }
         }
 
+        /* Judul box diubah jadi warna merah soft/crimson */
         .skills-box h4, .message-box h4 {
             margin-top: 0;
             margin-bottom: 15px;
-            color: #8a70a4;
+            color: #e23e57; 
             text-align: center;
             font-family: 'Fredoka', sans-serif;
             font-size: 18px;
@@ -195,7 +219,7 @@
 
         .skills-box li {
             font-size: 14px;
-            color: #555;
+            color: #b3b3b3;
             margin-bottom: 10px;
             line-height: 1.5;
             display: flex;
@@ -208,12 +232,14 @@
         }
 
         .spotify-box {
-            width: 100%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-radius: 12px;
-            overflow: hidden;
-            height: 352px; 
+        width: 100%;
+        box-shadow: 0 4px 20px rgba(166, 25, 46, 0.25); 
+        border-radius: 12px;
+        overflow: hidden;
+        height: 352px; 
+        border: 1px solid #a6192e; 
         }
+        
 
         .normal-emoji {
             -webkit-text-fill-color: initial;
@@ -232,7 +258,9 @@
             width: 100%;
             height: 90px;
             padding: 12px;
-            border: 2px solid #f4e6f7;
+            background-color: #25252b;
+            border: 2px solid #3e3e46;
+            color: white;
             border-radius: 12px;
             font-family: 'Quicksand', sans-serif;
             resize: none;
@@ -248,12 +276,13 @@
         }
 
         .message-box textarea:focus {
-            border-color: #ffb7b2;
+            border-color: #a6192e;
         }
 
+        /* Tombol kirim pesan jadi merah gelap */
         .message-box button {
             width: 100%;
-            background-color: #8a70a4;
+            background-color: #a6192e;
             color: white;
             border: none;
             padding: 12px;
@@ -264,11 +293,13 @@
             cursor: pointer;
             transition: 0.3s;
             font-size: 15px;
+            box-shadow: 0 4px 10px rgba(166, 25, 46, 0.2);
         }
 
         .message-box button:hover {
-            background-color: #765d8f;
+            background-color: #851222;
             transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(166, 25, 46, 0.4);
         }
     </style>
 </head>
@@ -284,31 +315,27 @@
     
     <div class="grid-kanan">
         
-        <div class="kolom-konten">
-            <div class="link-container">
-                <a href="https://instagram.com/http.tka" style="background-color: #f7c5c9;">🌸 Mampir ke IG Gue Yuk!</a>
-                <a href="game.html" style="background-color: #faafb5; color: #fdfafa;">🎮 Rekomendasi Game Gue</a>
-                <a href="random.html" class="btn-back" style="background-color: #ff9aa2; box-shadow: 0 4px 10px rgba(255, 154, 162, 0.4);">
-                ✨ Random</a>
-             </a>
-           </div>
+       <div class="link-container">
+            <a href="https://instagram.com/http.tka">🖤 Mampir ke IG Gue Yuk!</a>
+            <a href="game.html">🎮 Rekomendasi Game Gue</a>
+            <a href="random.html" class="btn-back">🥀 Random</a>
+            <img src="angel.png" alt="Dekorasi di bawah tombol Random" class="random-image">
+        </div>
 
-            <div class="skills-box">
-                <h4>My Skills & Interest:</h4>
-                <ul>
-                    <li><span>🎨</span> Gambar digital dan tradisional</li>
-                    <li><span>📖</span> Game Lore Analyst</li>
-                    <li><span>💻</span> HTML & CSS (Learning)</li>
-                </ul>
-            </div>
+        <div class="skills-box">
+            <h4>My Skills & Interest:</h4>
+            <ul>
+                <li><span>🎨</span> Gambar digital dan tradisional</li>
+                <li><span>📖</span> Game Lore Analyst</li>
+                <li><span>💻</span> HTML & CSS (Learning)</li>
+            </ul>
+        </div>
         </div>
 
         <div class="kolom-konten">
-            <div class="spotify-box">
-                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3bery48ldja5YhBdapGeLN?utm_source=generator&si=b649d3936980458a" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
+         <div class="spotify-box">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3bery48ldja5YhBdapGeLN?utm_source=generator&theme=0&si=7393898ef0c547cb" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
-    
         </div>
 
     </div>

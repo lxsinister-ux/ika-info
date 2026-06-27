@@ -14,7 +14,10 @@
         }
 
         body {
-            background-color: #f6e5f9;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('bg-emo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             font-family: 'Quicksand', sans-serif;
             margin: 0;
             padding: 30px 15px;
@@ -22,19 +25,25 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            color: #e0e0e0;
         }
 
         header {
             text-align: center;
             margin-bottom: 30px;
-            max-width: 600px;
+            max-width: 700px;
+            padding: 24px 20px;
+            background-color: rgba(26, 26, 30, 0.92);
+            border: 1px solid #2d2d34;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
         }
 
         header h1 {
             font-family: 'Fredoka', sans-serif;
             font-size: 32px;
             margin: 0 0 10px 0;
-            background: linear-gradient(45deg, #8a70a4, #ff9aa2);
+            background: linear-gradient(45deg, #a6192e, #e23e57, #8e9296);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -48,7 +57,7 @@
         }
 
         header p {
-            color: #666;
+            color: #b3b3b3;
             margin: 0;
             font-size: 14px;
         }
@@ -62,26 +71,24 @@
             margin-bottom: 40px;
         }
 
-        /* ====================================================
-           STYLE BARU: CSS UNTUK SEKAT KATEGORI
-           ==================================================== */
         .section-divider {
             font-family: 'Fredoka', sans-serif;
-            color: #8a70a4;
+            color: #ffffff;
             font-size: 18px;
             margin: 15px 0 5px 0;
             display: flex;
             align-items: center;
             gap: 8px;
-            border-bottom: 2px dashed #ff9aa2;
+            border-bottom: 2px dashed rgba(226, 62, 87, 0.45);
             padding-bottom: 8px;
         }
 
         .game-card {
-            background-color: white;
+            background-color: rgba(26, 26, 30, 0.95);
+            border: 1px solid #2d2d34;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
             display: flex;
             flex-direction: row;
             height: 210px;
@@ -90,7 +97,7 @@
 
         .game-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(138, 112, 164, 0.15);
+            box-shadow: 0 10px 25px rgba(166, 25, 46, 0.2);
         }
 
         .game-img {
@@ -113,13 +120,13 @@
         .game-info h2 {
             font-family: 'Fredoka', sans-serif;
             margin: 0 0 2px 0;
-            color: #8a70a4;
+            color: #f5f5f5;
             font-size: 16px;
         }
 
         .genre {
             font-size: 11px;
-            color: #ff9aa2;
+            color: #e23e57;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -127,56 +134,66 @@
         }
 
         .rating {
-            color: #ffb7b2;
+            color: #ff6f7d;
             font-size: 12px;
             margin-bottom: 8px;
         }
 
         .review {
-            color: #555;
+            color: #c0c0c0;
             font-size: 12px;
             line-height: 1.5;
-            margin: 0 0 10px 0; /* Tambah margin bottom dikit biar ga nempel tombol */
+            margin: 0 0 10px 0;
             display: -webkit-box;
             line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
 
-        /* BONUS: Style tombol detail biar rapi */
         .btn-detail {
             align-self: flex-start;
             font-size: 11px;
-            color: #8a70a4;
+            color: #e0e0e0;
             text-decoration: none;
             font-weight: bold;
-            background-color: #fcf5fd;
+            background-color: #25252b;
             padding: 6px 12px;
             border-radius: 12px;
-            border: 1px solid #f4e6f7;
+            border: 1px solid #3e3e46;
             transition: 0.2s;
         }
 
         .btn-detail:hover {
-            background-color: #8a70a4;
+            background-color: #a6192e;
             color: white;
         }
 
         .btn-back {
             display: inline-block;
-            background-color: #8a70a4;
+            background-color: #a6192e;
             color: white;
             text-decoration: none;
             padding: 12px 25px;
             border-radius: 20px;
             font-weight: bold;
             transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(138, 112, 164, 0.3);
+            box-shadow: 0 4px 10px rgba(166, 25, 46, 0.25);
         }
 
         .btn-back:hover {
-            background-color: #765d8f;
+            background-color: #851222;
             transform: scale(1.05);
+        }
+
+        .bow-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0 0;
+            border: none;
+            object-fit: fill;
+            border-radius: 0;
         }
 
         @media (min-width: 768px) {
@@ -244,6 +261,8 @@
         <h1>My Game Corner <span class="normal-emoji">🎮</span></h1>
         <p><b>Iseng nulis review singkat dan rekomendasi game yang seru (terutama yang lore-nya dalem!)</b>.</p>
     </header>
+
+    <img src="black-bow.png" alt="Black bow decoration" class="bow-image">
 
     <div class="games-grid">
 

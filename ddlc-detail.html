@@ -14,7 +14,10 @@
         }
 
         body {
-            background-color: #f6e5f9;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('bg-emo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             font-family: 'Quicksand', sans-serif;
             margin: 0;
             padding: 30px 15px;
@@ -22,20 +25,22 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            color: #e0e0e0;
         }
 
         .container {
-            background-color: white;
+            background-color: rgba(26, 26, 30, 0.95);
+            border: 1px solid #2d2d34;
             border-radius: 20px;
             padding: 25px;
             width: 100%;
             max-width: 700px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
         }
 
         h1 {
             font-family: 'Fredoka', sans-serif;
-            color: #ff9aa2; /* Pink DDLC abis */
+            color: #f5f5f5;
             font-size: 26px;
             margin-top: 0;
             margin-bottom: 10px;
@@ -44,18 +49,18 @@
 
         .meta-info {
             font-size: 13px;
-            color: #8a70a4;
+            color: #e23e57;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 20px;
-            border-bottom: 2px dashed #f4e6f7;
+            border-bottom: 2px dashed rgba(226, 62, 87, 0.45);
             padding-bottom: 10px;
         }
 
         h2 {
             font-family: 'Fredoka', sans-serif;
-            color: #ff9aa2;
+            color: #f5f5f5;
             font-size: 18px;
             margin-top: 25px;
             margin-bottom: 10px;
@@ -65,7 +70,7 @@
         }
 
         p {
-            color: #555;
+            color: #c0c0c0;
             font-size: 14.5px;
             line-height: 1.7;
             margin: 0 0 15px 0;
@@ -77,20 +82,20 @@
         }
 
         li {
-            color: #555;
+            color: #c0c0c0;
             font-size: 14px;
             line-height: 1.6;
             margin-bottom: 8px;
         }
 
         li strong {
-            color: #ff9aa2;
+            color: #e23e57;
         }
 
         /* Kotak Warning / Highlight Patah Hati */
         .warning-box {
-            background: linear-gradient(45deg, #ffb7b2, #ffe5ec);
-            border-left: 5px solid #ff4d6d;
+            background: linear-gradient(45deg, #2d2d34, #25252b);
+            border-left: 5px solid #a6192e;
             padding: 15px;
             border-radius: 0 12px 12px 0;
             margin: 25px 0;
@@ -101,14 +106,14 @@
             margin: 0;
             font-family: 'Fredoka', sans-serif;
             font-size: 15px;
-            color: #0c0002;
+            color: #f5f5f5;
             font-weight: bold;
         }
 
         /* Gaya Audio Player */
         .audio-section {
-            background-color: #fff0f3;
-            border: 2px solid #ffe5ec;
+            background-color: #25252b;
+            border: 2px solid #3e3e46;
             padding: 20px;
             border-radius: 15px;
             margin-top: 30px;
@@ -118,7 +123,7 @@
         .audio-section h4 {
             margin-top: 0;
             margin-bottom: 12px;
-            color: #ff4d6d;
+            color: #e23e57;
             font-family: 'Fredoka', sans-serif;
         }
 
@@ -130,19 +135,19 @@
 
         .btn-back {
             display: inline-block;
-            background-color: #8a70a4;
+            background-color: #a6192e;
             color: white;
             text-decoration: none;
             padding: 12px 25px;
             border-radius: 20px;
             font-weight: bold;
             transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(138, 112, 164, 0.3);
+            box-shadow: 0 4px 10px rgba(166, 25, 46, 0.25);
             margin-top: 25px;
         }
 
         .btn-back:hover {
-            background-color: #765d8f;
+            background-color: #851222;
             transform: scale(1.03);
         }
 
@@ -152,9 +157,9 @@
             height: auto;
             object-fit: cover;
             border-radius: 12px;
-            border: 3px solid #8a70a4;
-            box-shadow: 0 12px 30px rgba(138, 112, 164, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Fix typo sease */
+            border: 3px solid #a6192e;
+            box-shadow: 0 12px 30px rgba(166, 25, 46, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: block;
             margin: 0 auto;
         }
@@ -167,9 +172,9 @@
             height: 80px;
             object-fit: cover;
             border-radius: 50px;
-            border: 2px solid #ff9aa2;
-            box-shadow: 0 4px 10px rgba(255, 154, 162, 0.4);
-            margin: 0 auto 12px auto; /* Atas 0, Kiri-Kanan AUTO bikin gambar ke TENGAH, Bawah 12px */
+            border: 2px solid #a6192e;
+            box-shadow: 0 4px 10px rgba(166, 25, 46, 0.2);
+            margin: 0 auto 12px auto;
             display: block;
         }
 
