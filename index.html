@@ -9,28 +9,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ====================================================
-           1. DEFAULT GLOBAL & MOBILE STYLE (Tema Emo / Dark)
-           ==================================================== */
+        
         * {
             box-sizing: border-box;
         }
 
-        body {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('bg-emo.jpg');
-        background-size: cover;        
-        background-position: center;   
-        background-attachment: fixed;  
+    body {
+    background-color: #0d0d0f; /* Kalau gambar telat ke-load, background tetep hitam misterius */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('bg-emo.jpg');
+    background-size: cover;        
+    background-position: center;   
+    background-attachment: fixed;  
     
-        font-family: 'Quicksand', sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        margin: 0;
-        padding: 40px 20px;
-        gap: 30px;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
+    gap: 30px;
+    }
+
+    
+    @media (max-width: 767px) {
+        body {
+            background-attachment: scroll;
+        }
     }
 
         /* Kotak profil jadi hitam pekat */
@@ -314,9 +320,8 @@
     </div>
     
     <div class="grid-kanan">
-        
-       <div class="link-container">
-            <a href="https://instagram.com/http.tka">🖤 Mampir ke IG Gue Yuk!</a>
+        <div class="link-container">
+            <a href="https://instagram.com/http.tka" onclick="sapaPengunjung()">🖤 Mampir ke IG Gue Yuk!</a>
             <a href="game.html">🎮 Rekomendasi Game Gue</a>
             <a href="random.html" class="btn-back">🥀 Random</a>
             <img src="angel.png" alt="Dekorasi di bawah tombol Random" class="random-image">
@@ -330,15 +335,21 @@
                 <li><span>💻</span> HTML & CSS (Learning)</li>
             </ul>
         </div>
-        </div>
+    </div>
 
-        <div class="kolom-konten">
-         <div class="spotify-box">
+    <div class="kolom-konten">
+        <div class="spotify-box">
             <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3bery48ldja5YhBdapGeLN?utm_source=generator&theme=0&si=7393898ef0c547cb" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
         </div>
+    </div>
 
     </div>
+
+    <script>
+        function sapaPengunjung() {
+            alert("Welcome to the dark side! Anggap aja rumah sendiri ya.");
+        }
+    </script>
 
 </body>
 </html>

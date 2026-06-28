@@ -3,74 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruangan Random Ika 💥</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <title>Ika's Digital Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
     <style>
+        * { box-sizing: border-box; }
+
         body {
+            background-color: #0d0d0f;
             background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('bg-emo.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-size: cover; background-position: center; background-attachment: fixed;  
             font-family: 'Quicksand', sans-serif;
+            margin: 0; padding: 40px 20px;
+            color: #e0e0e0;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 767px) { body { background-attachment: scroll; } }
+
+        /* === TOMBOL KEMBALI === */
+        .btn-back {
+            display: inline-block; text-decoration: none;
+            background-color: #25252b; color: #b3b3b3;
+            padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: bold;
+            border: 1px solid #3e3e46; transition: 0.3s;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .btn-back:hover { background-color: #a6192e; color: white; transform: translateY(-2px); }
+
+        /* === CONTAINER TOMBOL MENU === */
+        .menu-container {
+            width: 100%; max-width: 450px;
+            display: flex; flex-direction: column; gap: 20px;
+        }
+        .menu-btn {
+            display: flex; flex-direction: column; align-items: flex-start;
+            text-decoration: none; background-color: #1a1a1e;
+            padding: 20px; border-radius: 15px;
+            border: 1px solid #2d2d34; transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .menu-btn:hover {
+            border-color: #e23e57; transform: translateY(-3px);
+            background-color: #222229;
+            box-shadow: 0 6px 20px rgba(166, 25, 46, 0.3);
+        }
+        .menu-btn h2 {
+            font-family: 'Cinzel', serif; margin: 0 0 5px 0; font-size: 18px;
+            color: #e23e57; letter-spacing: 1px;
+        }
+        .menu-btn p { margin: 0; font-size: 13px; color: #999999; line-height: 1.4; }
+
+        /* === 1. KOTAK PEMBUNGKUS FRAME BESAR (ANTI-KERDIL & ANTI-GEPENG) === */
+        .header-frame-wrapper {
+            position: relative;
+            text-align: center;
+            width: 100%;
+            max-width: 500px; /* Ukuran pas agar mawar proporsional di desktop */
+            padding-top: 35%; /* Mengunci rasio tinggi gambar di desktop */
+            background-image: url('bg-header.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        /* === 2. KOTAK TEKS YANG MELAYANG TEPAT DI TENGAH MAWAR === */
+        .header-content-overlay {
+            position: absolute;
+            top: 53%; /* Digeser dikit ke bawah biar center sama bentuk mawarnya */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 30px 15px;
-            min-height: 100vh;
-            margin: 0;
-            color: #e0e0e0;
+            justify-content: center;
         }
 
-        .container {
-            background-color: rgba(26, 26, 30, 0.95);
-            border: 1px solid #2d2d34;
-            border-radius: 20px;
-            padding: 25px;
-            width: 100%;
-            max-width: 700px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-            text-align: center;
-        }
-
+        /* === 3. STYLING TEKS JUDUL === */
         h1 {
-            font-family: 'Fredoka', sans-serif;
-            color: #f5f5f5;
-            margin-top: 0;
+            font-family: 'Cinzel', serif; 
+            font-size: 26px;
+            letter-spacing: 1.5px;
+            margin: 0;
+            font-weight: 700;
+            line-height: 1.2;
+            
+            /* Warna Gradasi Putih-Crimson Mewah */
+            background: linear-gradient(45deg, #e23e57, #ffffff, #e23e57);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+            /* Bayangan hitam pekat agar tembus dari warna merah mawar */
+            filter: drop-shadow(0px 4px 6px #000000) drop-shadow(0px 0px 10px #000000);
         }
 
-        p {
-            color: #c0c0c0;
-            line-height: 1.7;
+        /* === 4. STYLING DESKRIPSI DI LUAR BAWAH FRAME (BENTUK PLAKAT GOTHIC) === */
+        .header-desc-outside {
+            color: #e0e0e0; /* Dibikin sedikit lebih terang */
+            font-size: 13px;
+            text-align: center;
+            margin: 10px 0 35px 0; /* Diatur jaraknya biar pas dari mawar */
+            width: 100%;
+            max-width: 420px; /* Lebar kotak plakatnya */
+            line-height: 1.6;
+            font-weight: 500;
+            
+            /* === KEAJAIBAN BORDER & BACKGROUND GOTHIC === */
+            background-color: rgba(26, 26, 30, 0.75); /* Hitam transparan biar bg utama tetep ngintip */
+            padding: 12px 20px; /* Ruang dalam kotak biar gak sesak */
+            border-radius: 8px; /* Sudut sedikit tumpul */
+            border: 1px dashed #a6192e; /* Border putus-putus merah crimson biar ala ritual/gothic */
+            
+            /* Efek bayangan kotak dan teks */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            text-shadow: 1px 1px 2px #000000;
+        }
+        
+        /* === Penyesuaian khusus Mobile === */
+        @media (max-width: 767px) {
+            .header-frame-wrapper {
+                padding-top: 45%; 
+            }
+            h1 { 
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+            /* Penyesuaian kotak deskripsi di mobile */
+            .header-desc-outside { 
+                font-size: 12px; 
+                margin: 15px 0 30px 0;
+                width: 90%; /* Biar gak mentok layar HP */
+                padding: 10px 15px;
+            }
         }
 
-        .btn-back {
-            display: inline-block;
-            background-color: #a6192e;
-            color: white;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(166, 25, 46, 0.25);
-        }
-
-        .btn-back:hover {
-            background-color: #851222;
-            transform: scale(1.03);
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>💥 Ruangan Random Suka-Suka Gue 💥</h1>
-        <p>Selamat datang di tempat pembuangan hal random! Isinya bakal di-update tiap kali gue gabut wkwkwk.</p>
-        
-        <p><i>[Sore ini menunya rebahan di kasur sambil dengerin OST Resident Evil...]</i></p>
 
-        <br>
-        <a href="index.html" class="btn-back">← Balik ke Menu Utama</a>
+    <div class="header-frame-wrapper">
+        <div class="header-content-overlay">
+            <h1>Ika’s Digital Archive</h1>
+        </div>
     </div>
+    
+    <p class="header-desc-outside">Silakan pilih gerbang dimensi bawah tanah yang mau lu jelajahi hari ini.</p>
+
+    <div class="menu-container">
+        <a href="labs.html" class="menu-btn">
+            <h2>My Code Labs</h2>
+            <p>Catatan belajar programming interaktif. Lu bisa jalankan dan tes kodenya langsung di sini.</p>
+        </a>
+        <a href="stories.html" class="menu-btn">
+            <h2>Unspoken Thoughts</h2>
+            <p>Ruang fiksi dan coretan cerita random yang ada di kepala gue. Membaca berarti setuju dikutuk.</p>
+        </a>
+        <a href="gallery.html" class="menu-btn">
+            <h2>Visual Fragment</h2>
+            <p>Koleksi hasil gambar digital dan tradisional buatan gue. *Click to view detail*.</p>
+        </a>
+    </div>
+
+    <a href="index.html" class="btn-back"> ⬅ Kembali ke bio </a>
+
 </body>
 </html>

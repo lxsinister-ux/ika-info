@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Fragment - Ika's Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            background-color: #0d0d0f;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('bg-emo.jpg');
+            background-size: cover; background-position: center; background-attachment: fixed;  
+            font-family: 'Quicksand', sans-serif;
+            margin: 0; padding: 40px 20px;
+            color: #e0e0e0;
+            display: flex; flex-direction: column; align-items: center;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 767px) { body { background-attachment: scroll; } }
+
+        /* === TOMBOL KEMBALI NORMAL (KECIL) === */
+        .top-nav {
+            width: 100%; max-width: 900px;
+            display: flex; justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .btn-back {
+            display: inline-block; text-decoration: none;
+            background-color: #25252b; color: #b3b3b3;
+            padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: bold;
+            border: 1px solid #3e3e46; transition: 0.3s;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+        .btn-back:hover { background-color: #a6192e; color: white; transform: translateY(-2px); }
+
+        /* === HEADER GALERI === */
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery-header h1 {
+            font-family: 'Cinzel', serif; 
+            font-size: 32px; letter-spacing: 2px; margin: 0 0 10px 0;
+            background: linear-gradient(45deg, #a6192e, #e23e57, #cccccc);
+            background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 2px 4px #000000);
+        }
+
+        .gallery-header p {
+            color: #b3b3b3; font-size: 14px; margin: 0; max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .status-box {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 0 28px;
+            padding: 14px 18px;
+            border: 2px solid #e23e57;
+            border-radius: 14px;
+            background-color: #25252b;
+            box-shadow: 0 0 0 1px rgba(226,62,87,0.15), 0 0 18px rgba(226,62,87,0.18);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status-box::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(226,62,87,0.16), transparent);
+            transform: translateX(-100%);
+            animation: sweep 2.2s linear infinite;
+        }
+
+        .status-box p {
+            margin: 0;
+            color: #f0b3b9;
+            font-weight: 600;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: glowText 1.2s ease-in-out infinite alternate;
+        }
+
+        @keyframes sweep {
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes glowText {
+            from { text-shadow: 0 0 0 rgba(226, 62, 87, 0.2); }
+            to { text-shadow: 0 0 8px rgba(226, 62, 87, 0.6); }
+        }
+
+        /* === GRID GALERI MISTERIUS === */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        /* === KARTU GAMBAR === */
+        .gallery-card {
+            background-color: #1a1a1e;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #2d2d34;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex; flex-direction: column;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            border-color: #a6192e;
+            box-shadow: 0 10px 25px rgba(166, 25, 46, 0.4);
+        }
+
+        .img-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: grayscale(50%) brightness(0.6);
+        }
+
+        .gallery-card:hover .img-container img {
+            transform: scale(1.1);
+            filter: grayscale(0%) brightness(1);
+        }
+
+        .card-info {
+            padding: 15px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .card-title {
+            font-family: 'Cinzel', serif;
+            color: #e0e0e0;
+            font-size: 16px;
+            margin: 0;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .gallery-card:hover .card-title {
+            color: #e23e57;
+        }
+
+        .card-category {
+            font-size: 12px;
+            color: #888;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery-header">
+        <h1>Visual Fragment</h1>
+        <p>Koleksi saksi bisu dari goresan digital dan tradisional. Setiap gambar menyimpan teka-teki dan *lore*-nya sendiri.</p>
+    </div>
+
+    <div class="status-box">
+        <p>⚠️ Halaman masih dalam pengembangan</p>
+    </div>
+
+    <div class="gallery-grid">
+        <a href="#" class="gallery-card">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?q=80&w=600&auto=format&fit=crop" alt="Artwork 1">
+            </div>
+            <div class="card-info">
+                <h3 class="card-title">Umbrella Prototype</h3>
+                <span class="card-category">Digital Art</span>
+            </div>
+        </a>
+
+        <a href="#" class="gallery-card">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1629851608670-3d33010f3c5e?q=80&w=600&auto=format&fit=crop" alt="Artwork 2">
+            </div>
+            <div class="card-info">
+                <h3 class="card-title">Wesker's Report</h3>
+                <span class="card-category">Traditional Sketch</span>
+            </div>
+        </a>
+
+        <a href="#" class="gallery-card">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=600&auto=format&fit=crop" alt="Artwork 3">
+            </div>
+            <div class="card-info">
+                <h3 class="card-title">The Mansion Incident</h3>
+                <span class="card-category">Digital Art</span>
+            </div>
+        </a>
+
+        <a href="#" class="gallery-card">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1549488344-c0fa1e57c8d9?q=80&w=600&auto=format&fit=crop" alt="Artwork 4">
+            </div>
+            <div class="card-info">
+                <h3 class="card-title">Unnamed Subject</h3>
+                <span class="card-category">Traditional Ink</span>
+            </div>
+        </a>
+    </div>
+
+    <a href="random.html" class="btn-back" style="margin-top: 40px; margin-bottom: 10px;">⬅️ Kembali ke Halaman Random</a>
+
+</body>
+</html>

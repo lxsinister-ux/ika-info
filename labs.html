@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Code Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Quicksand', sans-serif;
+            background-color: #0d0d0f;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('bg-emo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #e0e0e0;
+        }
+
+        @media (max-width: 767px) {
+            body { background-attachment: scroll; }
+        }
+
+        .page-card {
+            width: 100%;
+            max-width: 520px;
+            background-color: #1a1a1e;
+            border: 1px solid #2d2d34;
+            border-radius: 24px;
+            padding: 32px 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 30px;
+            margin: 0 0 10px;
+            background: linear-gradient(45deg, #a6192e, #e23e57, #8e9296);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            color: #b3b3b3;
+            font-size: 16px;
+            margin: 0 0 18px;
+            line-height: 1.7;
+        }
+
+        .status-box {
+            background-color: #25252b;
+            border: 2px solid #e23e57;
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 0 1px rgba(226,62,87,0.15), 0 0 18px rgba(226,62,87,0.18);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status-box::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(226,62,87,0.18), transparent);
+            transform: translateX(-100%);
+            animation: sweep 2.2s linear infinite;
+        }
+
+        .status-box h2 {
+            margin: 0 0 10px;
+            color: #e23e57;
+            font-size: 20px;
+            font-family: 'Fredoka', sans-serif;
+            position: relative;
+            z-index: 1;
+            animation: glowText 1.2s ease-in-out infinite alternate;
+        }
+
+        .status-box p {
+            margin: 0;
+            color: #999999;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes sweep {
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes glowText {
+            from { text-shadow: 0 0 0 rgba(226, 62, 87, 0.2); }
+            to { text-shadow: 0 0 8px rgba(226, 62, 87, 0.6); }
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 18px;
+            text-decoration: none;
+            background-color: #25252b;
+            color: #e0e0e0;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: bold;
+            border: 1px solid #3e3e46;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            background-color: #a6192e;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(166, 25, 46, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <div class="icon">🛠️</div>
+        <h1>My Code Labs</h1>
+        <p class="subtitle">halaman tentang coding, java,css,html,phython dll, aku akan beri teori dan bagaimana program dieksekusi.</p>
+
+        <div class="status-box">
+            <h2>Halaman masih dalam pengembangan</h2>
+            <p>Konten, project, dan fitur interaktif akan segera hadir di sini. Tunggu update-nya ya.</p>
+        </div>
+
+        <a href="random.html" class="btn-back"> ⬅Kembali ke halaman random</a>
+    </div>
+</body>
+</html>

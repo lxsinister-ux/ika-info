@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unspoken Thoughts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 40px 20px;
+            font-family: 'Quicksand', sans-serif;
+            background-color: #0d0d0f;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('bg-emo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #e0e0e0;
+        }
+
+        @media (max-width: 767px) {
+            body { background-attachment: scroll; }
+        }
+
+        .page-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .hero-card, .preview-card, .status-card {
+            background-color: #1a1a1e;
+            border: 1px solid #2d2d34;
+            border-radius: 24px;
+            padding: 24px 22px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+        }
+
+        .hero-card h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 30px;
+            margin: 0 0 10px;
+            background: linear-gradient(45deg, #a6192e, #e23e57, #8e9296);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-card p, .status-card p, .preview-card p {
+            color: #b3b3b3;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .status-card {
+            border: 2px solid #e23e57;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 0 1px rgba(226,62,87,0.15), 0 0 18px rgba(226,62,87,0.15);
+        }
+
+        .status-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(226,62,87,0.14), transparent);
+            transform: translateX(-100%);
+            animation: sweep 2.2s linear infinite;
+        }
+
+        .status-card h2 {
+            margin: 0 0 8px;
+            color: #e23e57;
+            font-size: 20px;
+            font-family: 'Fredoka', sans-serif;
+            position: relative;
+            z-index: 1;
+            animation: glowText 1.2s ease-in-out infinite alternate;
+        }
+
+        .status-card p {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes sweep {
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes glowText {
+            from { text-shadow: 0 0 0 rgba(226, 62, 87, 0.2); }
+            to { text-shadow: 0 0 8px rgba(226, 62, 87, 0.6); }
+        }
+
+        .preview-card h3 {
+            margin: 0 0 12px;
+            color: #e23e57;
+            font-size: 18px;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .poem {
+            background-color: #25252b;
+            border: 1px solid #3e3e46;
+            border-radius: 16px;
+            padding: 18px 20px;
+            color: #e0e0e0;
+            font-style: italic;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            background-color: #25252b;
+            color: #e0e0e0;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: bold;
+            border: 1px solid #3e3e46;
+            transition: 0.3s;
+            width: fit-content;
+        }
+
+        .btn-back:hover {
+            background-color: #a6192e;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(166, 25, 46, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <section class="hero-card">
+            <h1>Unspoken Thoughts</h1>
+            <p>Ruang kecil untuk karya sastra, puisi, dan coretan yang belum sempat dikatakan dengan suara biasa.</p>
+        </section>
+
+        <section class="status-card">
+            <h2>Halaman masih dalam pengembangan</h2>
+            <p>Semua karya sastra akan dipindah ke sini nanti. Saat ini ada contoh preview singkat supaya kamu bisa lihat nuansa halaman.</p>
+        </section>
+
+        <section class="preview-card">
+            <h3>Preview Puisi</h3>
+            <div class="poem">Di antara sunyi dan lampu yang redup,
+Aku masih mencoba menulis namamu
+ke dalam ruang yang tak punya suara.
+
+Bukan karena aku kuat,
+melainkan karena aku belum mau berhenti
+menganggap luka itu masih punya cerita.</div>
+        </section>
+
+        <a href="random.html" class="btn-back"> ⬅ Kembali ke halaman random</a>
+    </div>
+</body>
+</html>
